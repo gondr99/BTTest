@@ -9,11 +9,12 @@ namespace BT
         public override void OnStart()
         {
             _startTime = Time.time;
+            Debug.Log($"대기 시작 : {waitTime}");
         }
 
         public override void OnStop()
         {
-            
+            Debug.Log("대기 끝");
         }
 
         public override NodeState OnUpdate()

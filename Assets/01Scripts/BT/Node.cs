@@ -9,8 +9,14 @@ namespace  BT
     {
         protected NodeState _nodeState;
         public NodeState NodeState => _nodeState;
+        public Blackboard blackboard;
 
         protected bool _isStarted = false;
+
+        public Node()
+        {
+            OnAwake();
+        }
 
         public NodeState Update()
         {
@@ -28,6 +34,10 @@ namespace  BT
             }
 
             return _nodeState;
+        }
+
+        public virtual void OnAwake(){
+
         }
 
         public abstract NodeState OnUpdate();
