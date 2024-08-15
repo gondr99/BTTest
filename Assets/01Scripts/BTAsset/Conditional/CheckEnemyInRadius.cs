@@ -21,8 +21,10 @@ public class CheckEnemyInRadius : Conditional
     {
         int cnt = Physics.OverlapSphereNonAlloc(transform.position, sightRange.Value, _colliders, whatIsEnemy.Value);
 
-        if(cnt > 0)
+        if(cnt > 0){
+            target.Value = _colliders[0].transform;
             return TaskStatus.Success;
+        }
         else 
             return TaskStatus.Failure;
     }
